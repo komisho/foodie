@@ -40,6 +40,8 @@ const MainComponent = () => {
                         />
                     );
                 },
+                headerStyle: { backgroundColor: "#E6393B" },
+                headerTitleStyle: { color: "#fff", fontWeight: "bold" },
             })}
         >
             <Tab.Screen name="Home" component={HomeScreen} />

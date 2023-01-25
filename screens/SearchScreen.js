@@ -9,7 +9,6 @@ const SearchScreen = () => {
                 // 'details' is provided when fetchDetails = true
                 console.log(data, details);
             }}
-            nearbyPlacesAPI="GooglePlacesSearch"
             query={{
                 key: "AIzaSyAsiK49NIhkIHQKyHL-N4_9dhhBU5K88aU",
                 language: "en",
