@@ -20,10 +20,15 @@ const ResturauntListScreen = () => {
             >
                 <Card.Title>{resturaunts.name}</Card.Title>
                 <Card.Divider />
-                <Card.Image source={resturaunts.img} />
                 <View>
                     <Text style={{ textAlign: "center", paddingTop: 10 }}>
-                        {resturaunts.description}
+                        {resturaunts.location}
+                    </Text>
+                    <Text style={{ textAlign: "center", paddingTop: 10 }}>
+                        {resturaunts.website}
+                    </Text>
+                    <Text style={{ textAlign: "center", paddingTop: 10 }}>
+                        {resturaunts.url}
                     </Text>
                 </View>
             </Card>

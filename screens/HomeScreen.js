@@ -12,31 +12,34 @@ const Break = () => {
 const DevLog = () => {
     return (
         <Card>
-            <Card.Title>Devlog - v0.0.3</Card.Title>
+            <Card.Title>Devlog - v0.4</Card.Title>
             <Card.Divider />
             <Text style={{ textAlign: "left", padding: 10 }}>
                 Done:
-                <Break /> + Headers have been styled
-                <Break /> + Home screen has content... even if it's just this
-                devlog
-                <Break /> + Rendered cards in the list now show an image that
-                pulls from the RESTURANTS array
-                <Break /> + Slight styling to list cards has been done.
+                <Break /> + Successfully captured data from Places API
+                <Break /> + Processed captured data and laid groundwork for
+                adding to list... you can now add items, but they do not persist
+                reload
+                <Break /> + Added confirmation modal that shows details and
+                gives you a button to add to the list and a button to cancel...
+                needs styling, purely functional right now
                 <Break />
                 <Break /> Todo:
-                <Break /> + Capture data from search and store it into the array
-                with appropriate data.
-                <Break /> + Revamp list card component styling, I don't like
-                like RNE's layout and want to define my own with the image on
-                the left, title on the right, and maybe some chip style
-                identifiers under that.
-                <Break /> + Add resturaunt details screen, this will also mean
-                adding a stack navigator to the list screen.
-                <Break /> + Maybe remove search button and instead add a FAB in
-                the center of the nav that calls search instead? Might look
-                nicer and be more obvious that that's how you add to your list.
-                <Break /> + Make sure search is location-aware.
-                <Break /> + ...redux?
+                <Break /> + Need to add Redux for global state management... I
+                can already tell it's going to get messy otherwise and it'll
+                just make things simpler in the long run
+                <Break /> + Add persistence
+                <Break /> + Gestures for swipe to delete, swipe down to get rid
+                of the modal...
+                <Break /> + possibly make search a modal instead of its own
+                screen so I can easily make it go away after a successful search
+                and add
+                <Break /> + List items need styling bad. Consider something like
+                Material UI. Also need to figure out how to create links that
+                will open the browser
+                <Break /> + how the HECKING HECK do I pull an image from the
+                place details query?! I have the data but getting a usable URL
+                is a whole different story...
             </Text>
         </Card>
     );
