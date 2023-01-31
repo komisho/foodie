@@ -1,15 +1,60 @@
-import { PlatformConstants } from "react-native";
+import { PlatformConstants, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
 import ResturauntListScreen from "./ResturauntListScreen";
+import ResturauntInfoScreen from "./ResturauntInfoScreen";
 import { Icon } from "@rneui/base";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
 
+const screenOptions = {
+    headerStyle: { backgroundColor: "#E6393B" },
+    headerTintColor: "#fff",
+};
+
+//Stack Nav for list and info screen
+const ListNavigator = () => {
+    const Stack = createStackNavigator();
+    return (
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: { backgroundColor: "#E6393B" },
+                headerTitleStyle: { color: "#fff", fontWeight: "bold" },
+                headerBackTitleVisible: false,
+                headerBackImage: () => {
+                    return (
+                        <Icon
+                            iconStyle={styles.backButton}
+                            type="font-awesome"
+                            name="angle-left"
+                        />
+                    );
+                },
+            }}
+        >
+            <Stack.Screen
+                name="List"
+                component={ResturauntListScreen}
+                options={({ navigation }) => ({
+                    title: "List",
+                })}
+            />
+            <Stack.Screen
+                name="Resturaunt Info"
+                component={ResturauntInfoScreen}
+                options={({ route }) => ({
+                    title: route.params.resturaunts.name,
+                })}
+            />
+        </Stack.Navigator>
+    );
+};
+
 const MainComponent = () => {
     return (
+        //Bottom Tab Nav
         <Tab.Navigator
             initialRouteName="Home"
             screenOptions={({ route }) => ({
@@ -45,10 +90,22 @@ const MainComponent = () => {
             })}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="List" component={ResturauntListScreen} />
+            <Tab.Screen
+                options={{ headerShown: false }}
+                name="List"
+                component={ListNavigator}
+            />
             <Tab.Screen name="Search" component={SearchScreen} />
         </Tab.Navigator>
     );
 };
+
+const styles = StyleSheet.create({
+    backButton: {
+        marginLeft: 10,
+        color: "#fff",
+        fontSize: 24,
+    },
+});
 
 export default MainComponent;

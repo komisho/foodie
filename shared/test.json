@@ -1,0 +1,422 @@
+{
+    "address_components": [
+      {
+        "long_name": "1112",
+        "short_name": "1112",
+        "types": [
+          "street_number"
+        ]
+      },
+      {
+        "long_name": "South Saint Mary's Street",
+        "short_name": "S St Mary's St",
+        "types": [
+          "route"
+        ]
+      },
+      {
+        "long_name": "Lavaca",
+        "short_name": "Lavaca",
+        "types": [
+          "neighborhood",
+          "political"
+        ]
+      },
+      {
+        "long_name": "San Antonio",
+        "short_name": "San Antonio",
+        "types": [
+          "locality",
+          "political"
+        ]
+      },
+      {
+        "long_name": "Bexar County",
+        "short_name": "Bexar County",
+        "types": [
+          "administrative_area_level_2",
+          "political"
+        ]
+      },
+      {
+        "long_name": "Texas",
+        "short_name": "TX",
+        "types": [
+          "administrative_area_level_1",
+          "political"
+        ]
+      },
+      {
+        "long_name": "United States",
+        "short_name": "US",
+        "types": [
+          "country",
+          "political"
+        ]
+      },
+      {
+        "long_name": "78210",
+        "short_name": "78210",
+        "types": [
+          "postal_code"
+        ]
+      }
+    ],
+    "adr_address": "<span class=\"street-address\">1112 S St Mary&#39;s St</span>, <span class=\"locality\">San Antonio</span>, <span class=\"region\">TX</span> <span class=\"postal-code\">78210</span>, <span class=\"country-name\">USA</span>",
+    "business_status": "OPERATIONAL",
+    "curbside_pickup": true,
+    "current_opening_hours": {
+      "open_now": false,
+      "periods": [
+        {
+          "close": {
+            "date": "2023-01-30",
+            "day": 1,
+            "time": "1300"
+          },
+          "open": {
+            "date": "2023-01-30",
+            "day": 1,
+            "time": "0700"
+          }
+        },
+        {
+          "close": {
+            "date": "2023-01-31",
+            "day": 2,
+            "time": "1500"
+          },
+          "open": {
+            "date": "2023-01-31",
+            "day": 2,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "date": "2023-02-01",
+            "day": 3,
+            "time": "1500"
+          },
+          "open": {
+            "date": "2023-02-01",
+            "day": 3,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "date": "2023-02-02",
+            "day": 4,
+            "time": "1500"
+          },
+          "open": {
+            "date": "2023-02-02",
+            "day": 4,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "date": "2023-02-03",
+            "day": 5,
+            "time": "1500"
+          },
+          "open": {
+            "date": "2023-02-03",
+            "day": 5,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "date": "2023-02-04",
+            "day": 6,
+            "time": "1500"
+          },
+          "open": {
+            "date": "2023-02-04",
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 7:00 AM – 1:00 PM",
+        "Tuesday: 6:30 AM – 3:00 PM",
+        "Wednesday: 6:30 AM – 3:00 PM",
+        "Thursday: 6:30 AM – 3:00 PM",
+        "Friday: 6:30 AM – 3:00 PM",
+        "Saturday: 8:00 AM – 3:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "delivery": true,
+    "dine_in": true,
+    "formatted_address": "1112 S St Mary's St, San Antonio, TX 78210, USA",
+    "formatted_phone_number": "(210) 739-9363",
+    "geometry": {
+      "location": {
+        "lat": 29.41248109999999,
+        "lng": -98.48827059999999
+      },
+      "viewport": {
+        "northeast": {
+          "lat": 29.41389883029149,
+          "lng": -98.48666111970849
+        },
+        "southwest": {
+          "lat": 29.41120086970849,
+          "lng": -98.4893590802915
+        }
+      }
+    },
+    "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+    "icon_background_color": "#FF9E67",
+    "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+    "international_phone_number": "+1 210-739-9363",
+    "name": "Kulture kafe",
+    "opening_hours": {
+      "open_now": false,
+      "periods": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1300"
+          },
+          "open": {
+            "day": 1,
+            "time": "0700"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1500"
+          },
+          "open": {
+            "day": 2,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1500"
+          },
+          "open": {
+            "day": 3,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1500"
+          },
+          "open": {
+            "day": 4,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1500"
+          },
+          "open": {
+            "day": 5,
+            "time": "0630"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1500"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "weekday_text": [
+        "Monday: 7:00 AM – 1:00 PM",
+        "Tuesday: 6:30 AM – 3:00 PM",
+        "Wednesday: 6:30 AM – 3:00 PM",
+        "Thursday: 6:30 AM – 3:00 PM",
+        "Friday: 6:30 AM – 3:00 PM",
+        "Saturday: 8:00 AM – 3:00 PM",
+        "Sunday: Closed"
+      ]
+    },
+    "photos": [
+      {
+        "height": 3456,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112625081575139691410\">Steve Young</a>"
+        ],
+        "photo_reference": "AfLeUgPVd1fklZbQel7Id-CNQxx9em-hG4GPj8HRVb0kki2i-bFQPrRg-00QxwCrwnfKbkP9ELkgHv8ht8hWoh08O6LTWcAT_sqN8ssDqW1Gm7BbmnMaMDg7jdp4Qxaz7ZyntdF_gBDjo1H1oeOrK6cakXZmFFDIFPf4rw5DSGg856-pBNgA",
+        "width": 4608
+      },
+      {
+        "height": 3000,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117776097307186325015\">Victoria V.</a>"
+        ],
+        "photo_reference": "AfLeUgNGZHzIYdYpmT1_IEmBZcNGqt7eY2wwBuSTSgJb2yljt_yq8nr2YNkIwuy_zFJJbVTG_4PMXcBnUA1oFWaTteml8_8ZSpddfnI76218OFP4Bll1gGP_uqa-3TUeqw5iTgy9kGKhYKvIaIGlfin_YY-ZfuEXoaAXQ1hN4NqY9oDOEQgz",
+        "width": 4000
+      },
+      {
+        "height": 847,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110479949031518323174\">Kulture kafe</a>"
+        ],
+        "photo_reference": "AfLeUgPhXGuSKAFIcQgDXvyzXq5ixO-TOUwa9RGdYsbLbSQJKYWsEnOnKXqf3UEFLoYiLjM2wN52vIz9AY4jpsFr87zGsTiYc0F45zkkiKVTXW4VvZMNQjnKQ_SgZmcIj3zMz6MqjDa1WrXCBfJJY63H1Hr6x4N2VMhNeiTXq4n0-KG0RYwo",
+        "width": 1284
+      },
+      {
+        "height": 487,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110479949031518323174\">Kulture kafe</a>"
+        ],
+        "photo_reference": "AfLeUgOOZvnxuYHkepfoTJyPnNJh_FUc_DfYdQc8G2WTgLgrxjEyrpEdO3seQH2Ic8qFuEjl5gY78PFqfON7s_decqUlEPUSJjlkkjTMO_G9UaoIyIztARLSGyb4lDcpeC1Qvk5uSdL9CB_YAFrCZKfJmENsRXH9UNO_JlNW0X1BgaJmap_v",
+        "width": 867
+      },
+      {
+        "height": 3000,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117776097307186325015\">Victoria V.</a>"
+        ],
+        "photo_reference": "AfLeUgMv233V05rbnLHnP3m-cZ4qkzjdkOGzy4f-Ir48x86ULRrToPd3a7R6V0G3FmVshvtgLGS4a8QG58eMuBI6ms5MNgTBsbQmjtdXCxqfAMRqupOCnme6otpGVg0A0_BAOhOOOXbIB-y-M6PuwInyI_3PzpGkQn3GqFq4_MUq2lfUhNkV",
+        "width": 4000
+      },
+      {
+        "height": 3456,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/112625081575139691410\">Steve Young</a>"
+        ],
+        "photo_reference": "AfLeUgPhUqNdiYqh-1rZrwk9fQP2Fym-aN3lqt2ySCDeyq_owP_4dm3mMe8n56uJhqQD2g-fZoYHXUuLMKB75ZHaugqx9W-KZFnFaKFGwNs3lPRNgz2tYyR2M-BA1TE9KeGVW2ocGKvBABKzzlYPPq-vY4G5NHZGguHBqhMWuPeFsSepsCat",
+        "width": 4608
+      },
+      {
+        "height": 4162,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110479949031518323174\">Kulture kafe</a>"
+        ],
+        "photo_reference": "AfLeUgPU3s76bUUnzeat6s9GZG0qTr5pCHjA0UqcGgh1Mw5SYaZRm7j42DEne4cHZ4iaqoOVtqcmNaTiyYJYupLQWeTE6_btNoidtlXZW4FxXdq9SanTh5RNZD7CCR16J4kIHi05__nuRazlS7vdD5dKP7ZR2xdzjz54pEKeUSB-c_N1LJvL",
+        "width": 3330
+      },
+      {
+        "height": 3024,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/100646889843365186719\">Carol E</a>"
+        ],
+        "photo_reference": "AfLeUgMHO1PcF4iza6UaHFPArv_LgDYD4gxloH-6HwgIqUh9oHGRYBKKp_JnKQn3oCRVWeHjyplBsRQ53QATUTqUOVplAd16HtDrCJMxpazjvjaDU_ywe_4JeWrmVF4bF9F0xPjmSGSpib5qHymfif2hXdJnCiyxLEAiiuU2IuakZXVxtiI8",
+        "width": 4032
+      },
+      {
+        "height": 4032,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/117544238375630987078\">Jarrod Hernandez (Luis)</a>"
+        ],
+        "photo_reference": "AfLeUgOTId_bxLyBq20gXp1FOK_QcSPS9Dc1dW_ryC7vuiTtXY7OGSBPB-J026_RfRQKwtKlnppsjSPDza0RZvP2KGpbpVJA1FVVgwnsFOMUd8fs8LWVPP_58fBSYPHY-NWQIpkKOV22yVywZl1dbXIdnx7uzoi7drsGZerJMIslJivXAabk",
+        "width": 3024
+      },
+      {
+        "height": 1241,
+        "html_attributions": [
+          "<a href=\"https://maps.google.com/maps/contrib/110479949031518323174\">Kulture kafe</a>"
+        ],
+        "photo_reference": "AfLeUgOXHF_UAMR0adGMdSg7eVFKjEqM7-zJA3IJInYOmBzD6euz4V8Eq14UXyCwdeU-GYNrGVVNQV3xJXnVJATjNvrETqjzJ7yIDFnmBe20whLrK8Vq7imueCI4JXffBbnvyyu1XG6LNjzeHWpP8DaGquUM2N5mLmwkuedeWcqZginEBEEo",
+        "width": 1284
+      }
+    ],
+    "place_id": "ChIJeQe1Df9ZXIYR6kVPiUOTIR8",
+    "plus_code": {
+      "compound_code": "CG66+XM San Antonio, TX, USA",
+      "global_code": "76X3CG66+XM"
+    },
+    "price_level": 1,
+    "rating": 4.9,
+    "reference": "ChIJeQe1Df9ZXIYR6kVPiUOTIR8",
+    "reviews": [
+      {
+        "author_name": "Victoria V.",
+        "author_url": "https://www.google.com/maps/contrib/117776097307186325015/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AD5-WCkEqpkrpDqs_umTJt_zyvlohlNm2u_GLoE0Xp7X-Q=s128-c0x00000000-cc-rp-mo-ba4",
+        "rating": 5,
+        "relative_time_description": "3 weeks ago",
+        "text": "Overall, I have to give it five stars because the food is just so good. My husband and I love the chilaquiles bowls here, and I'm always trying a new coffee drink from their wide selection. I have to say, they have a bit of an issue here with their timing and customer service. We've ordered delivery several times and I thought it was strange it took much longer than the estimated time. This last time, we ordered directly, and it still took them twenty minutes longer than the longest estimated pickup time we were given. I felt like I was polite when I pointed this out, and I had even complimented them for how much we loved their food and ordered from there, so I was surprised there was no inclination towards making that right.  Again though, not worth docking them in star rating because I would like for them and their awesome food to stick around.",
+        "time": 1672866814,
+        "translated": false
+      },
+      {
+        "author_name": "Sally G",
+        "author_url": "https://www.google.com/maps/contrib/108659861386175760417/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AD5-WClvZXnH12t6aTdoOoHrn1MIVwiw10h5mjaat_KfJw=s128-c0x00000000-cc-rp-mo-ba5",
+        "rating": 5,
+        "relative_time_description": "4 months ago",
+        "text": "The Texas Latte is a must try. My new favorite coffee in San Antonio. The jalapeno cheddar bagel sandwich is delicious and huge. Didn't have to wait long. The buzzer is a nice touch.",
+        "time": 1662870305,
+        "translated": false
+      },
+      {
+        "author_name": "Dave & Dani (DaveAndDani)",
+        "author_url": "https://www.google.com/maps/contrib/104139952662563558744/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AD5-WCmQIypfVXuBspMLE0gcJjWeGxyVEN6bMKwralmh=s128-c0x00000000-cc-rp-mo",
+        "rating": 5,
+        "relative_time_description": "a month ago",
+        "text": "This place is a GEM. Literally one of the BEST meals we had in TX. Anthony is the NICEST! And gave us the best recommendations for “out of towners” really trying to explore the menu! I had the chiliquiles-um AND WOOWWWW. My husband had the jalapeño bagel (best bagel we’ve ever had) and the coconut chai was FAB. Lit can’t say enough good things about this place or Anthony and his sweet cashier. Lit 10/10.",
+        "time": 1672272777,
+        "translated": false
+      },
+      {
+        "author_name": "Ozzie Ramirez",
+        "author_url": "https://www.google.com/maps/contrib/107570429805676097216/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AD5-WCnrvCg_bhXaS9sc-nalamgrwEWOOKIdV_LpmPkM=s128-c0x00000000-cc-rp-mo-ba4",
+        "rating": 5,
+        "relative_time_description": "10 months ago",
+        "text": "The ham, egg and cheese on a bagel was really good. Coffee was great, too. The kids loved their food. Service was great, as well.",
+        "time": 1647714455,
+        "translated": false
+      },
+      {
+        "author_name": "Melanie Jauregui",
+        "author_url": "https://www.google.com/maps/contrib/102214814004607052156/reviews",
+        "language": "en",
+        "original_language": "en",
+        "profile_photo_url": "https://lh3.googleusercontent.com/a-/AD5-WCl22uhGhh6pZFjosiJ0QpbsUy46In9dcIvr9UEnznU=s128-c0x00000000-cc-rp-mo-ba3",
+        "rating": 5,
+        "relative_time_description": "5 months ago",
+        "text": "Ordered the Coconut Caramel Cold Brew, Iced Jamaica Refresher & the Chilaquiles. So delicious! Everything was so flavorful- especially the Chilaquiles (not pictured) because I ate it all before I could take a pic!",
+        "time": 1661016062,
+        "translated": false
+      }
+    ],
+    "serves_breakfast": true,
+    "serves_brunch": true,
+    "serves_lunch": true,
+    "takeout": true,
+    "types": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "url": "https://maps.google.com/?cid=2243236007682983402",
+    "user_ratings_total": 103,
+    "utc_offset": -360,
+    "vicinity": "1112 South Saint Mary's Street, San Antonio",
+    "website": "https://www.kulturekafesa.com/",
+    "wheelchair_accessible_entrance": true
+  }
