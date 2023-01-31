@@ -2,7 +2,25 @@ FOODIE! is an app all about keeping track of all those places you wanted to try 
 
 Devlog:
 
-0.4:
+0.5:
+
+Done:
+
+-   Implemented Redux for state/data management
+-   Changed the logic for adding a new item to the list from search to use redux
+-   Added stack navigator to list tab
+-   Added a restaurant details screen to list stack
+-   Styled the new stack navigator to be in-line with the rest of the app
+
+Todo:
+
+-   Add persistence
+-   Gestures for swipe to delete and other things
+-   LOTS of styling for list view, details screen, search screen, confirm add screen, etc...
+-   Some subtle animations to add some flair
+-   apparently I can't spell the word restaurant and need to fix that typo throughout the app
+
+    0.4:
 
 Done:
 
