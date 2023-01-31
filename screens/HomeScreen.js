@@ -12,34 +12,26 @@ const Break = () => {
 const DevLog = () => {
     return (
         <Card>
-            <Card.Title>Devlog - v0.4</Card.Title>
+            <Card.Title>Devlog - v0.5</Card.Title>
             <Card.Divider />
             <Text style={{ textAlign: "left", padding: 10 }}>
                 Done:
-                <Break /> + Successfully captured data from Places API
-                <Break /> + Processed captured data and laid groundwork for
-                adding to list... you can now add items, but they do not persist
-                reload
-                <Break /> + Added confirmation modal that shows details and
-                gives you a button to add to the list and a button to cancel...
-                needs styling, purely functional right now
+                <Break /> + Implemented Redux for state/data management
+                <Break /> + Changed the logic for adding a new item to the list
+                from search to use redux
+                <Break /> + Added stack navigator to list tab
+                <Break /> + Added a restaurant details screen to list stack
+                <Break /> + Styled the new stack navigator to be in-line with
+                the rest of the app
                 <Break />
                 <Break /> Todo:
-                <Break /> + Need to add Redux for global state management... I
-                can already tell it's going to get messy otherwise and it'll
-                just make things simpler in the long run
                 <Break /> + Add persistence
-                <Break /> + Gestures for swipe to delete, swipe down to get rid
-                of the modal...
-                <Break /> + possibly make search a modal instead of its own
-                screen so I can easily make it go away after a successful search
-                and add
-                <Break /> + List items need styling bad. Consider something like
-                Material UI. Also need to figure out how to create links that
-                will open the browser
-                <Break /> + how the HECKING HECK do I pull an image from the
-                place details query?! I have the data but getting a usable URL
-                is a whole different story...
+                <Break /> + Gestures for swipe to delete and other things
+                <Break /> + LOTS of styling for list view, details screen,
+                search screen, confirm add screen, etc...
+                <Break /> + Some subtle animations to add some flair
+                <Break /> + apparently I can't spell the word restaurant and
+                need to fix that typo throughout the app
             </Text>
         </Card>
     );
