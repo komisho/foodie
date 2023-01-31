@@ -1,9 +1,13 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { View, Text, Alert, Modal, StyleSheet, Button } from "react-native";
-import { useState } from "react";
-import { RESTURAUNTS } from "../shared/RESTURAUNTS";
+import { useState, useRef, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem } from "../features/resturaunts/resturauntsSlice";
 
 const SearchScreen = () => {
+    const resturaunts = useSelector((state) => state.resturaunts);
+    const dispatch = useDispatch();
+    //Variable to hold JSON data to process... might not need this but it works right now.
     let placeJSON;
 
     const [showModal, setShowModal] = useState(false);
@@ -11,14 +15,14 @@ const SearchScreen = () => {
 
     const handleAdd = () => {
         const newItem = {
-            id: RESTURAUNTS.length + 1,
+            id: resturaunts.length + 1,
             name: placeDetails.name,
             location: placeDetails.formatted_address,
             website: placeDetails.website,
             url: placeDetails.url,
         };
         console.log(newItem);
-        RESTURAUNTS.push(newItem);
+        dispatch(addItem(newItem));
     };
 
     return (

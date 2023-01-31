@@ -1,13 +1,11 @@
 import { Card } from "@rneui/base";
 import { FlatList, Pressable } from "react-native";
 import { View, Text } from "react-native";
-import { RESTURAUNTS } from "../shared/RESTURAUNTS";
-import { useState } from "react";
 import { CurrentRenderContext } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
 const ResturauntListScreen = ({ navigation }) => {
-    const [resturaunts, setResturaunts] = useState(RESTURAUNTS);
-
+    const resturaunts = useSelector((state) => state.resturaunts);
     //I don't know why yet, but I think item: unpacks all the items from an object instead of individual destructuring...?
     const renderListItem = ({ item: resturaunts }) => {
         return (

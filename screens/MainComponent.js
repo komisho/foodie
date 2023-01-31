@@ -1,4 +1,4 @@
-import { PlatformConstants, StyleSheet } from "react-native";
+import { PlatformConstants, Pressable, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
@@ -6,13 +6,9 @@ import ResturauntListScreen from "./ResturauntListScreen";
 import ResturauntInfoScreen from "./ResturauntInfoScreen";
 import { Icon } from "@rneui/base";
 import { createStackNavigator } from "@react-navigation/stack";
+import { FAB } from "react-native-paper";
 
 const Tab = createBottomTabNavigator();
-
-const screenOptions = {
-    headerStyle: { backgroundColor: "#E6393B" },
-    headerTintColor: "#fff",
-};
 
 //Stack Nav for list and info screen
 const ListNavigator = () => {
@@ -35,7 +31,7 @@ const ListNavigator = () => {
             }}
         >
             <Stack.Screen
-                name="List"
+                name="Resturaunt List"
                 component={ResturauntListScreen}
                 options={({ navigation }) => ({
                     title: "List",
@@ -90,6 +86,7 @@ const MainComponent = () => {
             })}
         >
             <Tab.Screen name="Home" component={HomeScreen} />
+
             <Tab.Screen
                 options={{ headerShown: false }}
                 name="List"
@@ -105,6 +102,13 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: "#fff",
         fontSize: 24,
+    },
+    customFAB: {
+        color: "#fff",
+        fontSize: 30,
+        backgroundColor: "black",
+        padding: 10,
+        borderRadius: "50%",
     },
 });
 
