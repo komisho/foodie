@@ -3,6 +3,7 @@ import { View, Text, Alert, Modal, StyleSheet, Button } from "react-native";
 import { useState, useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../features/resturaunts/resturauntsSlice";
+import { GOOGLE_MAPS_API_TOKEN } from "@env";
 
 const SearchScreen = () => {
     const resturaunts = useSelector((state) => state.resturaunts);
@@ -36,38 +37,9 @@ const SearchScreen = () => {
                     let placeObj = JSON.parse(placeJSON);
                     setShowModal(!showModal);
                     setPlaceDetails(placeObj);
-                    // Alert.alert(
-                    //     "Add to list",
-                    //     "Would you like to add this to your list?",
-                    //     [
-                    //         {
-                    //             text: "Cancel",
-                    //             style: "Cancel",
-                    //             onPress: () => {
-                    //                 console.log("Item not added");
-                    //             },
-                    //         },
-                    //         {
-                    //             text: "OK",
-                    //             onPress: () => {
-                    //                 placeJSON = JSON.stringify(details, null, 2);
-                    //                 placeDetails = JSON.parse(placeJSON);
-                    //                 console.log(
-                    //                     placeDetails.name,
-                    //                     placeDetails.formatted_address,
-                    //                     placeDetails.url,
-                    //                     placeDetails.website
-                    //                 );
-                    //             },
-                    //         },
-                    //     ]
-                    // );
-
-                    // 'details' is provided when fetchDetails = true
-                    // console.log(data, details);
                 }}
                 query={{
-                    key: "AIzaSyAsiK49NIhkIHQKyHL-N4_9dhhBU5K88aU",
+                    key: `${GOOGLE_MAPS_API_TOKEN}`,
                     language: "en",
                 }}
             />
