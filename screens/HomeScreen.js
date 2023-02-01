@@ -1,7 +1,5 @@
-import { View, Text } from "react-native";
-import { Image } from "@rneui/themed";
+import { Text } from "react-native";
 import { Card } from "@rneui/base";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 
 //Utility linebreak component because I don't want to keep typing {'\n'} to format my devlog...
@@ -12,26 +10,32 @@ const Break = () => {
 const DevLog = () => {
     return (
         <Card>
-            <Card.Title>Devlog - v0.5</Card.Title>
+            <Card.Title>Devlog - v0.6</Card.Title>
             <Card.Divider />
             <Text style={{ textAlign: "left", padding: 10 }}>
                 Done:
-                <Break /> + Implemented Redux for state/data management
-                <Break /> + Changed the logic for adding a new item to the list
-                from search to use redux
-                <Break /> + Added stack navigator to list tab
-                <Break /> + Added a restaurant details screen to list stack
-                <Break /> + Styled the new stack navigator to be in-line with
-                the rest of the app
+                <Break /> + Basic styling is basically all done, it'll
+                eventually change, but I'm happy with where it is for now. Add
+                item is now a popup instead of a modal and is styled, list is
+                styled very simply, details view shares the same styling as add
+                item right now
+                <Break /> + Detailed view contains clickable address and
+                website, address will currently lead to the google maps page
+                (would like to use device default eventually) and website will
+                open browser to... the website
                 <Break />
                 <Break /> Todo:
-                <Break /> + Add persistence
-                <Break /> + Gestures for swipe to delete and other things
-                <Break /> + LOTS of styling for list view, details screen,
-                search screen, confirm add screen, etc...
-                <Break /> + Some subtle animations to add some flair
-                <Break /> + apparently I can't spell the word restaurant and
-                need to fix that typo throughout the app
+                <Break /> + Redux Persist
+                <Break /> + Delete logic and swipe gesture
+                <Break /> + Somehow figure out how to fetch an image from each
+                restaraunt for the list and details view
+                <Break /> + Finalize what data I want to save within the app for
+                future use
+                <Break /> + Some kind of visual confirmation after adding an
+                item to your list
+                <Break /> + If there is time... make a "What should I eat?"
+                button on the homescreen that will randomly pick something from
+                your list and pop up the details for it
             </Text>
         </Card>
     );

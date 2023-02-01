@@ -1,6 +1,7 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
-import { View, Text, Alert, Modal, StyleSheet, Button } from "react-native";
-import { useState, useRef, useEffect } from "react";
+import { View, Text, StyleSheet, Linking } from "react-native";
+import { Button, Overlay, Card, Image } from "@rneui/base";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../features/resturaunts/resturauntsSlice";
 import { GOOGLE_MAPS_API_TOKEN } from "@env";
@@ -11,6 +12,7 @@ const SearchScreen = () => {
     //Variable to hold JSON data to process... might not need this but it works right now.
     let placeJSON;
 
+    const [showOverlay, setShowOverlay] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [placeDetails, setPlaceDetails] = useState({});
 
@@ -29,13 +31,18 @@ const SearchScreen = () => {
     return (
         <>
             <GooglePlacesAutocomplete
+                styles={{
+                    container: {
+                        margin: 10,
+                    },
+                }}
                 placeholder="Search"
                 fetchDetails={true}
                 // GooglePlacesDetailsQuery={{ fields: ["name", "address_component"] }}
                 onPress={(data, details = null) => {
                     placeJSON = JSON.stringify(details, null, 2);
                     let placeObj = JSON.parse(placeJSON);
-                    setShowModal(!showModal);
+                    setShowOverlay(!showOverlay);
                     setPlaceDetails(placeObj);
                 }}
                 query={{
@@ -44,47 +51,102 @@ const SearchScreen = () => {
                 }}
             />
 
-            <Modal
+            {/* <Modal
                 animationType="slide"
                 transparent={false}
                 visible={showModal}
                 onRequestClose={() => setShowModal(!showModal)}
+            > */}
+            <Overlay
+                isVisible={showOverlay}
+                onBackdropPress={() => {
+                    setShowOverlay(!showOverlay);
+                    console.log("clicked out of overlay, aborted");
+                }}
+                overlayStyle={{
+                    backgroundColor: "#fff",
+                    margin: 20,
+                }}
             >
-                <View style={styles.modalWrapper}>
-                    <Text>{placeDetails.name}</Text>
-                    <Text>{placeDetails.formatted_address}</Text>
-                    <Text>{placeDetails.website}</Text>
-                    <Text>{placeDetails.url}</Text>
-                    <View style={{ margin: 10 }}>
+                <View style={styles.overlayWrapper}>
+                    <Card>
+                        <Card.Image
+                            style={{ margin: 5, marginBottom: 25 }}
+                            height="200"
+                            width="200"
+                            objectFit="cover"
+                            source={require("../assets/img/burger.jpg")}
+                        />
+                        <Card.Title style={{ fontSize: 16 }}>
+                            {placeDetails.name}
+                        </Card.Title>
+                        <Card.Divider />
+                        <View>
+                            <View>
+                                <Text
+                                    style={{
+                                        margin: 5,
+                                        textAlign: "center",
+                                        fontWeight: "bold",
+                                        fontSize: 12,
+                                    }}
+                                    onPress={() =>
+                                        Linking.openURL(placeDetails.url)
+                                    }
+                                >
+                                    {placeDetails.formatted_address}
+                                </Text>
+                                <Text
+                                    style={{
+                                        margin: 5,
+                                        textAlign: "center",
+                                        fontSize: 14,
+                                        color: "blue",
+                                    }}
+                                    onPress={() =>
+                                        Linking.openURL(placeDetails.website)
+                                    }
+                                >
+                                    Website
+                                </Text>
+                            </View>
+                        </View>
+                    </Card>
+
+                    {/* <Text>{placeDetails.website}</Text>
+                    <Text>{placeDetails.url}</Text> */}
+                    <View style={{ margin: 5, marginTop: 25 }}>
                         <Button
                             title="Add To List"
-                            color="black"
+                            color="#E6393B"
                             onPress={() => {
                                 handleAdd();
                                 console.log("success");
-                                setShowModal(!showModal);
+                                setShowOverlay(!showOverlay);
                             }}
+                            containerStyle={{ width: 200 }}
                         />
                     </View>
-                    <View style={{ margin: 10 }}>
+                    <View style={{ margin: 5 }}>
                         <Button
                             title="Cancel"
-                            color="black"
+                            color="grey"
                             onPress={() => {
                                 console.log("aborted");
-                                setShowModal(!showModal);
+                                setShowOverlay(!showOverlay);
                             }}
+                            containerStyle={{ width: 200 }}
                         />
                     </View>
                 </View>
-            </Modal>
+            </Overlay>
+            {/* </Modal> */}
         </>
     );
 };
 
 const styles = StyleSheet.create({
-    modalWrapper: {
-        flex: 1,
+    overlayWrapper: {
         justifyContent: "center",
         alignItems: "center",
         margin: 20,

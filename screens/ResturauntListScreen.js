@@ -14,26 +14,17 @@ const ResturauntListScreen = ({ navigation }) => {
                     navigation.navigate("Resturaunt Info", { resturaunts })
                 }
             >
-                <Card
-                    style={{
-                        justifyContent: "center",
-                        alignItems: "center",
-                        flex: 1,
-                    }}
-                >
-                    <Card.Title>{resturaunts.name}</Card.Title>
-                    <Card.Divider />
-                    <View>
-                        <Text style={{ textAlign: "center", paddingTop: 10 }}>
-                            {resturaunts.location}
-                        </Text>
-                        <Text style={{ textAlign: "center", paddingTop: 10 }}>
-                            {resturaunts.website}
-                        </Text>
-                        <Text style={{ textAlign: "center", paddingTop: 10 }}>
-                            {resturaunts.url}
-                        </Text>
-                    </View>
+                <Card>
+                    <Card.Image
+                        style={{ margin: 5, marginBottom: 25 }}
+                        height="200"
+                        width="200"
+                        objectFit="cover"
+                        source={require("../assets/img/burger.jpg")}
+                    />
+                    <Card.Title style={{ fontSize: 16 }}>
+                        {resturaunts.name}
+                    </Card.Title>
                 </Card>
             </Pressable>
         );

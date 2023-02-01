@@ -2,6 +2,22 @@ FOODIE! is an app all about keeping track of all those places you wanted to try 
 
 Devlog:
 
+0.6
+
+Done:
+
+-   Basic styling is basically all done, it'll eventually change, but I'm happy with where it is for now. Add item is now a popup instead of a modal and is styled, list is styled very simply, details view shares the same styling as add item right now
+-   Detailed view contains clickable address and website, address will currently lead to the google maps page (would like to use device default eventually) and website will open browser to... the website
+
+Todo:
+
+-   Redux Persist
+-   Delete logic and swipe gesture
+-   Somehow figure out how to fetch an image from each restaraunt for the list and details view
+-   Finalize what data I want to save within the app for future use
+-   Some kind of visual confirmation after adding an item to your list
+-   If there is time... make a "What should I eat?" button on the homescreen that will randomly pick something from your list and pop up the details for it
+
 0.5:
 
 Done:
@@ -20,7 +36,7 @@ Todo:
 -   Some subtle animations to add some flair
 -   apparently I can't spell the word restaurant and need to fix that typo throughout the app
 
-    0.4:
+0.4:
 
 Done:
 
