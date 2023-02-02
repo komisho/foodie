@@ -1,7 +1,7 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { View, Text, StyleSheet, Linking } from "react-native";
 import { Button, Overlay, Card, Image } from "@rneui/base";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../features/resturaunts/resturauntsSlice";
 import { GOOGLE_MAPS_API_TOKEN } from "@env";
@@ -9,24 +9,46 @@ import { GOOGLE_MAPS_API_TOKEN } from "@env";
 const SearchScreen = () => {
     const resturaunts = useSelector((state) => state.resturaunts);
     const dispatch = useDispatch();
-    //Variable to hold JSON data to process... might not need this but it works right now.
-    let placeJSON;
 
     const [showOverlay, setShowOverlay] = useState(false);
-    const [showModal, setShowModal] = useState(false);
     const [placeDetails, setPlaceDetails] = useState({});
+    const [photo, setPhoto] = useState("");
+    const [newItem, setNewItem] = useState({});
+
+    const fetchPhotoUrl = () => {
+        const photoReference = placeDetails.photos[0].photo_reference;
+        const width = "300";
+        const height = "300";
+
+        fetch(
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${photoReference}&key=${GOOGLE_MAPS_API_TOKEN}`
+        )
+            .then((response) => {
+                setPhoto({ uri: response.url });
+                console.log(response.url);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
+
+    //Function to add a new item to the list
 
     const handleAdd = () => {
+        fetchPhotoUrl();
         const newItem = {
             id: resturaunts.length + 1,
             name: placeDetails.name,
             location: placeDetails.formatted_address,
             website: placeDetails.website,
             url: placeDetails.url,
+            photo: photo,
         };
         console.log(newItem);
         dispatch(addItem(newItem));
     };
+
+    //Screen content
 
     return (
         <>
@@ -40,8 +62,8 @@ const SearchScreen = () => {
                 fetchDetails={true}
                 // GooglePlacesDetailsQuery={{ fields: ["name", "address_component"] }}
                 onPress={(data, details = null) => {
-                    placeJSON = JSON.stringify(details, null, 2);
-                    let placeObj = JSON.parse(placeJSON);
+                    //Taking returned details and making them usable
+                    let placeObj = JSON.parse(JSON.stringify(details, null, 2));
                     setShowOverlay(!showOverlay);
                     setPlaceDetails(placeObj);
                 }}
