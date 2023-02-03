@@ -10,7 +10,9 @@ const ResturauntInfoScreen = ({ route }) => {
                 height="200"
                 width="200"
                 objectFit="cover"
-                source={require("../assets/img/burger.jpg")}
+                source={{
+                    uri: resturaunts.photoUrl,
+                }}
             />
             <Card.Title style={{ fontSize: 16 }}>{resturaunts.name}</Card.Title>
             <Card.Divider />

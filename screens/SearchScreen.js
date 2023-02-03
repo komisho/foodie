@@ -32,6 +32,7 @@ const SearchScreen = () => {
     //     });
     // };
 
+    //Fetch details, then fetch photo URL, then build item and present it.
     const handleData = async (data, details) => {
         const width = "300";
         const height = "300";
@@ -50,59 +51,12 @@ const SearchScreen = () => {
         setShowOverlay(!showOverlay);
     };
 
-    const fetchBuildPresent = async () => {
-        const width = "300";
-        const height = "300";
-        console.log("Entered block");
-
-        //Fetch Google Image URL
-        const response = await fetch(
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${placeDetails.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_TOKEN}`
-        ).then(() => {
-            console.log("step 3");
-        });
-
-        await new Promise((resolve) => {
-            let photoUrl = response.url;
-            setPhoto(photoUrl);
-            console.log(response.url);
-            console.log("step 4");
-            resolve();
-        });
-
-        await new Promise((resolve) => {
-            buildItem();
-            console.log("step 5");
-            resolve();
-        });
-
-        await new Promise((resolve) => {
-            setShowOverlay(!showOverlay);
-            console.log("step 6");
-            resolve();
-        });
-    };
-
-    //Construct new item
-    const buildItem = () => {
-        const newItem = {
-            id: resturaunts.length + 1,
-            name: placeDetails.name,
-            location: placeDetails.formatted_address,
-            website: placeDetails.website,
-            url: placeDetails.url,
-            photoUrl: photo,
-        };
-        setRestaraunt(newItem);
-        console.log(newItem);
-    };
-
     const handleAdd = () => {
+        console.log(restaraunt);
         dispatch(addItem(restaraunt));
     };
 
     //Screen content
-
     return (
         <>
             <GooglePlacesAutocomplete

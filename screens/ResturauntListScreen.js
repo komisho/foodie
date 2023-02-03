@@ -1,5 +1,5 @@
 import { Card } from "@rneui/base";
-import { FlatList, Pressable } from "react-native";
+import { FlatList, Pressable, Image } from "react-native";
 import { View, Text } from "react-native";
 import { CurrentRenderContext } from "@react-navigation/native";
 import { useSelector } from "react-redux";
@@ -14,18 +14,55 @@ const ResturauntListScreen = ({ navigation }) => {
                     navigation.navigate("Resturaunt Info", { resturaunts })
                 }
             >
-                <Card>
-                    <Card.Image
-                        style={{ margin: 5, marginBottom: 25 }}
-                        height="200"
-                        width="200"
-                        objectFit="cover"
-                        source={require("../assets/img/burger.jpg")}
+                <View
+                    style={{
+                        flex: 1,
+
+                        flexDirection: "row",
+                        alignItems: "center",
+                        backgroundColor: "white",
+                        marginTop: 5,
+                        marginBottom: 5,
+                        marginLeft: 10,
+                        marginRight: 10,
+                        shadowOffset: {
+                            width: 2,
+                            height: 2,
+                        },
+                        shadowOpacity: 0.2,
+                        shadowRadius: 2,
+                        shadowColor: "black",
+                    }}
+                >
+                    <Image
+                        style={{
+                            height: 100,
+                            width: 100,
+                            // margin: 10,
+                            // borderRadius: 50,
+                        }}
+                        source={{
+                            uri: resturaunts.photoUrl,
+                        }}
                     />
-                    <Card.Title style={{ fontSize: 16 }}>
-                        {resturaunts.name}
-                    </Card.Title>
-                </Card>
+                    <View
+                        style={{
+                            flex: 1,
+                            width: "60%",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Text
+                            style={{
+                                fontSize: 16,
+                                textAlign: "center",
+                                fontWeight: "bold",
+                            }}
+                        >
+                            {resturaunts.name}
+                        </Text>
+                    </View>
+                </View>
             </Pressable>
         );
     };

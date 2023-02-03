@@ -2,15 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const resturauntsSlice = createSlice({
     name: "resturaunts",
-    initialState: [
-        {
-            id: 0,
-            name: "Taco Test Barn",
-            location: "Your computer",
-            website: "none",
-            url: "none",
-        },
-    ],
+    initialState: [],
     reducers: {
         addItem: (state, action) => {
             state.push(action.payload);
