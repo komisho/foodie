@@ -1,6 +1,6 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { View, Text, StyleSheet, Linking } from "react-native";
-import { Button, Overlay, Card, Image } from "@rneui/base";
+import { Button, Overlay, Card } from "@rneui/base";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../features/resturaunts/resturauntsSlice";
@@ -11,41 +11,94 @@ const SearchScreen = () => {
     const dispatch = useDispatch();
 
     const [showOverlay, setShowOverlay] = useState(false);
-    const [placeDetails, setPlaceDetails] = useState({});
-    const [photo, setPhoto] = useState("");
-    const [newItem, setNewItem] = useState({});
+    const [restaraunt, setRestaraunt] = useState({});
 
-    const fetchPhotoUrl = () => {
-        const photoReference = placeDetails.photos[0].photo_reference;
+    // const handleData = (data, details) => {
+    //     const width = "300";
+    //     const height = "300";
+
+    //     fetch(
+    //         `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${details.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_TOKEN}`
+    //     ).then((results) => {
+    //         setRestaraunt({
+    //             id: resturaunts.length + 1,
+    //             name: details.name,
+    //             location: details.formatted_address,
+    //             website: details.website,
+    //             url: details.url,
+    //             photoUrl: results.url,
+    //         });
+    //         setShowOverlay(!showOverlay);
+    //     });
+    // };
+
+    const handleData = async (data, details) => {
         const width = "300";
         const height = "300";
 
-        fetch(
-            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${photoReference}&key=${GOOGLE_MAPS_API_TOKEN}`
-        )
-            .then((response) => {
-                setPhoto({ uri: response.url });
-                console.log(response.url);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+        const results = await fetch(
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${details.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_TOKEN}`
+        );
+        setRestaraunt({
+            id: resturaunts.length + 1,
+            name: details.name,
+            location: details.formatted_address,
+            website: details.website,
+            url: details.url,
+            photoUrl: results.url,
+        });
+        setShowOverlay(!showOverlay);
     };
 
-    //Function to add a new item to the list
+    const fetchBuildPresent = async () => {
+        const width = "300";
+        const height = "300";
+        console.log("Entered block");
 
-    const handleAdd = () => {
-        fetchPhotoUrl();
+        //Fetch Google Image URL
+        const response = await fetch(
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${placeDetails.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_TOKEN}`
+        ).then(() => {
+            console.log("step 3");
+        });
+
+        await new Promise((resolve) => {
+            let photoUrl = response.url;
+            setPhoto(photoUrl);
+            console.log(response.url);
+            console.log("step 4");
+            resolve();
+        });
+
+        await new Promise((resolve) => {
+            buildItem();
+            console.log("step 5");
+            resolve();
+        });
+
+        await new Promise((resolve) => {
+            setShowOverlay(!showOverlay);
+            console.log("step 6");
+            resolve();
+        });
+    };
+
+    //Construct new item
+    const buildItem = () => {
         const newItem = {
             id: resturaunts.length + 1,
             name: placeDetails.name,
             location: placeDetails.formatted_address,
             website: placeDetails.website,
             url: placeDetails.url,
-            photo: photo,
+            photoUrl: photo,
         };
+        setRestaraunt(newItem);
         console.log(newItem);
-        dispatch(addItem(newItem));
+    };
+
+    const handleAdd = () => {
+        dispatch(addItem(restaraunt));
     };
 
     //Screen content
@@ -61,24 +114,13 @@ const SearchScreen = () => {
                 placeholder="Search"
                 fetchDetails={true}
                 // GooglePlacesDetailsQuery={{ fields: ["name", "address_component"] }}
-                onPress={(data, details = null) => {
-                    //Taking returned details and making them usable
-                    let placeObj = JSON.parse(JSON.stringify(details, null, 2));
-                    setShowOverlay(!showOverlay);
-                    setPlaceDetails(placeObj);
-                }}
+                onPress={handleData}
                 query={{
                     key: `${GOOGLE_MAPS_API_TOKEN}`,
                     language: "en",
                 }}
             />
 
-            {/* <Modal
-                animationType="slide"
-                transparent={false}
-                visible={showModal}
-                onRequestClose={() => setShowModal(!showModal)}
-            > */}
             <Overlay
                 isVisible={showOverlay}
                 onBackdropPress={() => {
@@ -97,10 +139,12 @@ const SearchScreen = () => {
                             height="200"
                             width="200"
                             objectFit="cover"
-                            source={require("../assets/img/burger.jpg")}
+                            source={{
+                                uri: restaraunt.photoUrl,
+                            }}
                         />
                         <Card.Title style={{ fontSize: 16 }}>
-                            {placeDetails.name}
+                            {restaraunt.name}
                         </Card.Title>
                         <Card.Divider />
                         <View>
@@ -113,10 +157,10 @@ const SearchScreen = () => {
                                         fontSize: 12,
                                     }}
                                     onPress={() =>
-                                        Linking.openURL(placeDetails.url)
+                                        Linking.openURL(restaraunt.url)
                                     }
                                 >
-                                    {placeDetails.formatted_address}
+                                    {restaraunt.location}
                                 </Text>
                                 <Text
                                     style={{
@@ -126,7 +170,7 @@ const SearchScreen = () => {
                                         color: "blue",
                                     }}
                                     onPress={() =>
-                                        Linking.openURL(placeDetails.website)
+                                        Linking.openURL(restaraunt.website)
                                     }
                                 >
                                     Website
@@ -134,9 +178,6 @@ const SearchScreen = () => {
                             </View>
                         </View>
                     </Card>
-
-                    {/* <Text>{placeDetails.website}</Text>
-                    <Text>{placeDetails.url}</Text> */}
                     <View style={{ margin: 5, marginTop: 25 }}>
                         <Button
                             title="Add To List"
@@ -162,7 +203,6 @@ const SearchScreen = () => {
                     </View>
                 </View>
             </Overlay>
-            {/* </Modal> */}
         </>
     );
 };
