@@ -13,25 +13,6 @@ const SearchScreen = () => {
     const [showOverlay, setShowOverlay] = useState(false);
     const [restaraunt, setRestaraunt] = useState({});
 
-    // const handleData = (data, details) => {
-    //     const width = "300";
-    //     const height = "300";
-
-    //     fetch(
-    //         `https://maps.googleapis.com/maps/api/place/photo?maxwidth=${width}&maxheight=${height}&photoreference=${details.photos[0].photo_reference}&key=${GOOGLE_MAPS_API_TOKEN}`
-    //     ).then((results) => {
-    //         setRestaraunt({
-    //             id: resturaunts.length + 1,
-    //             name: details.name,
-    //             location: details.formatted_address,
-    //             website: details.website,
-    //             url: details.url,
-    //             photoUrl: results.url,
-    //         });
-    //         setShowOverlay(!showOverlay);
-    //     });
-    // };
-
     //Fetch details, then fetch photo URL, then build item and present it.
     const handleData = async (data, details) => {
         const width = "300";
@@ -67,7 +48,6 @@ const SearchScreen = () => {
                 }}
                 placeholder="Search"
                 fetchDetails={true}
-                // GooglePlacesDetailsQuery={{ fields: ["name", "address_component"] }}
                 onPress={handleData}
                 query={{
                     key: `${GOOGLE_MAPS_API_TOKEN}`,
@@ -75,6 +55,7 @@ const SearchScreen = () => {
                 }}
             />
 
+            {/* Popup to present data */}
             <Overlay
                 isVisible={showOverlay}
                 onBackdropPress={() => {

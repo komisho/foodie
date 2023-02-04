@@ -57,34 +57,9 @@ const ResturauntListScreen = ({ navigation }) => {
                         console.log(resturaunts);
                     }}
                 >
-                    <View
-                        style={{
-                            flex: 1,
-
-                            flexDirection: "row",
-                            alignItems: "center",
-                            backgroundColor: "white",
-                            marginTop: 1,
-                            paddingTop: 5,
-                            paddingBottom: 5,
-                            paddingLeft: 10,
-                            paddingRight: 10,
-                            shadowOffset: {
-                                width: 2,
-                                height: 2,
-                            },
-                            shadowOpacity: 0.2,
-                            shadowRadius: 2,
-                            shadowColor: "black",
-                        }}
-                    >
+                    <View style={styles.itemWrapper}>
                         <Image
-                            style={{
-                                height: 100,
-                                width: 100,
-                                // margin: 10,
-                                // borderRadius: 50,
-                            }}
+                            style={styles.itemImage}
                             source={{
                                 uri: resturaunts.photoUrl,
                             }}
@@ -137,6 +112,28 @@ const styles = StyleSheet.create({
         fontWeight: "700",
         textAlign: "center",
         fontSize: 16,
+        width: 100,
+    },
+    itemWrapper: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: "white",
+        marginTop: 1,
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 10,
+        paddingRight: 10,
+        shadowOffset: {
+            width: 2,
+            height: 2,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+        shadowColor: "black",
+    },
+    itemImage: {
+        height: 100,
         width: 100,
     },
 });
