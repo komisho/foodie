@@ -6,7 +6,6 @@ import ResturauntListScreen from "./ResturauntListScreen";
 import ResturauntInfoScreen from "./ResturauntInfoScreen";
 import { Icon } from "@rneui/base";
 import { createStackNavigator } from "@react-navigation/stack";
-import { FAB } from "react-native-paper";
 
 const Tab = createBottomTabNavigator();
 

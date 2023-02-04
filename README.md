@@ -2,6 +2,21 @@ FOODIE! is an app all about keeping track of all those places you wanted to try 
 
 Devlog:
 
+0.7
+
+_Done_
+
+-   Styling is _done_ for now. It's never actually done, but it's done **for now**
+-   Successfully fetching an image using the photo_reference from fetched Place Details call!
+-   Redux Persist has been added and set up, app now persists data!
+-   There's a splash screen but you'll never see it right now.
+-   Successfully capturing all data I want from Place Details query. Still might add more things, but I'm happy with it _for now_
+-   Swipe to delete added... logic for it was weird, probably need to look at that again later.
+
+_Todo_
+
+-   Visual confirmation when you add an item
+
 0.6
 
 Done:

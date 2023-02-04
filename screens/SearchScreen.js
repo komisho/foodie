@@ -1,7 +1,7 @@
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { View, Text, StyleSheet, Linking } from "react-native";
 import { Button, Overlay, Card } from "@rneui/base";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItem } from "../features/resturaunts/resturauntsSlice";
 import { GOOGLE_MAPS_API_TOKEN } from "@env";

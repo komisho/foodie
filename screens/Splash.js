@@ -1,8 +1,11 @@
 import { View, Text } from "react-native";
+
 const Splash = () => {
     return (
-        <View>
-            <Text>Loading</Text>
+        <View
+            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+            <Text>Loading...</Text>
         </View>
     );
 };
