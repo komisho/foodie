@@ -5,7 +5,7 @@ const Splash = () => {
         <View
             style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
         >
-            <Text>Loading...</Text>
+            <Text>Loading.....</Text>
         </View>
     );
 };
