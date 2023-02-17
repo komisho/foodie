@@ -1,3 +1,5 @@
+***Taking a slight development break while I work through my backend course... but we'll be back!***
+
 FOODIE! is an app all about keeping track of all those places you wanted to try but were left forgetten deep within your notes app.
 
 Devlog:
